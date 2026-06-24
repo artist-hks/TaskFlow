@@ -126,7 +126,7 @@ Respond with ONLY valid JSON, no markdown, in exactly this shape:
   const timeout = setTimeout(() => controller.abort(), 30000);
 
   try {
-    const url = `${GEMINI_URL}?key=${apiKey}`;
+    const url = `${GEMINI_URL}?key=${encodeURIComponent(apiKey)}`;
     console.log('--- Gemini API Debug ---');
     console.log('Key length:', apiKey?.length);
     console.log('Key prefix:', apiKey?.slice(0, 6) + '...');
@@ -151,13 +151,11 @@ Respond with ONLY valid JSON, no markdown, in exactly this shape:
 
     if (!res.ok) {
       const errBody = await res.text();
-      console.error('Gemini API error body:', errBody);
+      console.error(`[Gemini Error] Status: ${res.status} ${res.statusText}`);
+      console.error(`[Gemini Error] Body:`, errBody);
       try {
         const errJson = JSON.parse(errBody);
-        console.error('Error code:', errJson?.error?.code);
-        console.error('Error message:', errJson?.error?.message);
-        console.error('Error status:', errJson?.error?.status);
-        console.error('Error details:', JSON.stringify(errJson?.error?.details, null, 2));
+        console.error('Error Details:', JSON.stringify(errJson?.error, null, 2));
       } catch { /* body wasn't JSON */ }
       return ruleBasedSuggestion(title, description);
     }
