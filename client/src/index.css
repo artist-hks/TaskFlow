@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  body {
+    @apply bg-canvas text-ink transition-colors duration-200 ease-apple;
+  }
+  .dark body {
+    @apply bg-canvas-dark text-ink-dark;
+  }
+}
+
+@layer components {
+  /* ---------- Buttons ---------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5
+      text-sm font-medium transition-all duration-150 ease-apple
+      active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-white hover:brightness-105 dark:bg-accent-dark;
+  }
+  .btn-secondary {
+    @apply btn bg-canvas text-ink hover:brightness-95
+      dark:bg-[#2C2C2E] dark:text-ink-dark;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-accent hover:bg-accent/5
+      dark:text-accent-dark dark:hover:bg-accent-dark/10;
+  }
+  .btn-danger {
+    @apply btn bg-danger text-white hover:brightness-105;
+  }
+
+  /* ---------- Inputs ---------- */
+  .input {
+    @apply w-full rounded-xl border border-hairline bg-surface px-3.5 py-2.5
+      text-sm text-ink placeholder:text-muted outline-none
+      transition-all duration-150 ease-apple
+      focus:border-accent focus:ring-2 focus:ring-accent/20
+      dark:border-hairline-dark dark:bg-surface-dark dark:text-ink-dark
+      dark:placeholder:text-muted-dark dark:focus:border-accent-dark
+      dark:focus:ring-accent-dark/20;
+  }
+  select.input {
+    @apply appearance-none pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+  }
+  .label {
+    @apply mb-1.5 block text-[13px] font-medium text-muted dark:text-muted-dark;
+  }
+
+  /* ---------- Cards ---------- */
+  .card {
+    @apply rounded-2xl bg-surface shadow-soft transition-colors duration-200
+      ease-apple dark:bg-surface-dark;
+  }
+}
+
+/* ---------- Keyframe animations ---------- */
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes modalin {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hide scrollbars on the column row but keep scroll on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes selectFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
