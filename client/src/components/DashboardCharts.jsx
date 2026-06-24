@@ -56,6 +56,10 @@ export default function DashboardCharts({ tasks }) {
     fontSize: 13,
   };
 
+  const tooltipItemStyle = {
+    color: theme === 'dark' ? '#F5F5F7' : '#1D1D1F',
+  };
+
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
       <div className="card p-6">
@@ -82,7 +86,7 @@ export default function DashboardCharts({ tasks }) {
                   <Cell key={entry.key} fill={STATUS_COLORS[entry.key]} />
                 ))}
               </Pie>
-              <Tooltip contentStyle={tooltipStyle} />
+              <Tooltip contentStyle={tooltipStyle} itemStyle={tooltipItemStyle} />
               <Legend
                 iconType="circle"
                 wrapperStyle={{ fontSize: 13, color: axisColor }}
@@ -119,6 +123,7 @@ export default function DashboardCharts({ tasks }) {
               />
               <Tooltip
                 contentStyle={tooltipStyle}
+                itemStyle={tooltipItemStyle}
                 cursor={{ fill: 'rgba(0,0,0,0.04)' }}
               />
               <Bar dataKey="value" radius={[8, 8, 0, 0]}>
