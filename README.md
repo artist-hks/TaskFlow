@@ -29,17 +29,17 @@ A polished, Trello/Asana-style task manager with an Apple-clean interface. Built
 
 ## 📸 Screenshots
 
-### Desktop Experience
-<p align="center">
-  <img src="./screenshots/dashboard.png" width="48%" alt="Dashboard Analytics" />
-  <img src="./screenshots/board.png" width="48%" alt="Kanban Board View" />
-</p>
+<div align="center">
+  <img src="./screenshots/desktop.png" width="100%" alt="Desktop Dashboard View" />
+</div>
 
-### Mobile Experience
-<p align="center">
-  <img src="./screenshots/login.png" width="25%" alt="Login Screen" />
-  <img src="./screenshots/mobile.png" width="25%" alt="Mobile Responsive View" />
-</p>
+<br />
+
+<div align="center">
+  <img src="./screenshots/board.png" width="32%" alt="Kanban Board View" />
+  <img src="./screenshots/login.png" width="32%" alt="Login Screen" />
+  <img src="./screenshots/mobile.png" width="32%" alt="Mobile Responsive View" />
+</div>
 
 ---
 
