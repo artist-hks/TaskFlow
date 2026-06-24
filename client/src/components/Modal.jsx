@@ -24,7 +24,7 @@ export default function Modal({ open, onClose, title, children, maxWidth = 'max-
         onClick={onClose}
       />
       <div
-        className={`relative z-10 w-full ${maxWidth} animate-[modalin_0.2s_ease] rounded-t-2xl bg-surface shadow-soft-lg sm:rounded-2xl dark:bg-surface-dark`}
+        className={`relative z-10 w-full ${maxWidth} animate-[modalin_0.2s_ease] rounded-t-2xl bg-surface shadow-soft-lg sm:rounded-2xl dark:bg-surface-dark dark:border dark:border-hairline-dark`}
       >
         <div className="flex items-center justify-between border-b border-hairline/60 px-6 py-4 dark:border-hairline-dark/60">
           <h2 className="text-[18px] font-semibold text-ink dark:text-ink-dark">

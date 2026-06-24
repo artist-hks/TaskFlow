@@ -75,7 +75,7 @@ body {
   /* ---------- Cards ---------- */
   .card {
     @apply rounded-2xl bg-surface shadow-soft transition-colors duration-200
-      ease-apple dark:bg-surface-dark;
+      ease-apple dark:bg-surface-dark dark:border dark:border-hairline-dark;
   }
 }
 

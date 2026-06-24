@@ -26,7 +26,7 @@ export default {
         danger: '#FF3B30',
         // Dark mode tokens
         'canvas-dark': '#000000',
-        'surface-dark': '#1C1C1E',
+        'surface-dark': '#232325',
         'ink-dark': '#F5F5F7',
         'muted-dark': '#98989D',
         'hairline-dark': '#38383A',

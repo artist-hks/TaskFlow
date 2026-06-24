@@ -48,8 +48,8 @@ export default function DashboardCharts({ tasks }) {
   const hasData = tasks.length > 0;
 
   const tooltipStyle = {
-    backgroundColor: theme === 'dark' ? '#1C1C1E' : '#FFFFFF',
-    border: 'none',
+    backgroundColor: theme === 'dark' ? '#2C2C2E' : '#FFFFFF',
+    border: theme === 'dark' ? '1px solid #38383A' : 'none',
     borderRadius: 12,
     boxShadow: '0 2px 20px rgba(0,0,0,0.12)',
     color: theme === 'dark' ? '#F5F5F7' : '#1D1D1F',
